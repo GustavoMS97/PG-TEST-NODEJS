@@ -1,2 +1,8 @@
 # PG-TEST-NODEJS
-Project developed for a test, to show skills developing API's using NodeJS, along with the requested libraries.
+
+Configuração inicial do projeto
+
+- Rodar no MySql os seguintes comandos
+  - CREATE DATABASE pg_test_nodejs;
+  - CREATE USER 'dev'@'localhost' IDENTIFIED WITH mysql_native_password BY '1qaz2wsx3edc';
+  - GRANT ALL PRIVILEGES ON _._ TO 'dev'@'localhost' WITH GRANT OPTION;
