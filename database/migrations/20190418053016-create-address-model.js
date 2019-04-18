@@ -7,11 +7,11 @@ module.exports = {
       },
       street: { allowNull: false, type: DataTypes.STRING },
       state: { allowNull: false, type: DataTypes.STRING },
-      user_id: {
-        type: DataTypes.STRING,
+      client_id: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-          model: 'Users',
+          model: 'Clients',
           key: '_id',
         },
         onUpdate: 'CASCADE',

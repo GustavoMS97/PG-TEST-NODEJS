@@ -14,4 +14,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
+require('./app/controllers/index')(app);
+
 app.listen(3000);

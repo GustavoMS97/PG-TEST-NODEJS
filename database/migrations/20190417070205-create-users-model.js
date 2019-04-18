@@ -10,14 +10,9 @@ module.exports = {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      CEP: {
+      file_name: {
         allowNull: false,
         type: DataTypes.STRING,
-      },
-      CPF: {
-        allowNull: false,
-        type: DataTypes.STRING,
-        unique: true,
       },
       date_sent: {
         allowNull: false,
