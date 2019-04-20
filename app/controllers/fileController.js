@@ -3,7 +3,6 @@ const multer = require('multer');
 const csv = require('csv-parser');
 const fs = require('fs');
 const axios = require('axios');
-const Op = require('sequelize').Op;
 
 const { User, Client, Address } = require('../models');
 const multerConfig = require('../../config/multer');
@@ -90,40 +89,6 @@ router.post(
     }
   },
 );
-
-router.get('/:id', async (req, res) => {
-  if (!req.params.id) {
-    return res.status(400).send({ message: 'User id missing inside request.' });
-  }
-  let response = {};
-  const user = await User.findOne({
-    where: { _id: req.params.id },
-  });
-  if (user && user.dataValues) {
-    response = { ...user.dataValues };
-    const clientsModelArray = await Client.findAll({
-      where: { user_id: user.dataValues._id },
-    });
-    if (clientsModelArray) {
-      const clientsArray = [];
-      clientsModelArray.forEach((client) => {
-        delete client.dataValues.user_id;
-        clientsArray.push(client.dataValues);
-      });
-      for (let i = 0; i < clientsArray.length; i++) {
-        const addressModel = await Address.findOne({
-          where: { client_id: clientsArray[i]._id },
-        });
-        if (addressModel && addressModel.dataValues) {
-          delete addressModel.dataValues.client_id;
-          clientsArray[i]['address'] = addressModel.dataValues;
-        }
-      }
-      response = { ...response, clients: clientsArray };
-    }
-  }
-  return res.status(200).send(response);
-});
 
 /**
  * This method creates a "address" and returns it's data.
