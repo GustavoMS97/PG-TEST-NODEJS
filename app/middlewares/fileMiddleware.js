@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = (req, res, next) => {
+  // Checks if there is any file.
+  if (!req.file) {
+    return res.status(400).send({ error: 'Bad request, file expected' });
+  }
   //Checks if the file type is valid.
   if (req.file.mimetype !== 'text/csv') {
     return res.status(400).send({ error: 'Unsupported file type.' });

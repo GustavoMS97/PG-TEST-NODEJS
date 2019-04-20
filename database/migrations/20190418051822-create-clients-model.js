@@ -18,7 +18,6 @@ module.exports = {
       CPF: {
         allowNull: false,
         type: DataTypes.STRING,
-        unique: true,
       },
       date_sent: {
         allowNull: false,
