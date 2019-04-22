@@ -69,11 +69,6 @@ router.put('/:id(\\d+)/', async (req, res) => {
       delete client.dataValues.user_id;
       //Puts the client data in the response, along with the "updated_info" status.
       response = { ...client.dataValues, status: 'update_info' };
-    } else {
-      //If it wasn't, puts a message indicating a error in the request.
-      const message =
-        'Client not found or request data is the same as client data.';
-      response['message'] = message;
     }
     //Returns a response to the user.
     return res.status(200).send(response);
@@ -121,7 +116,7 @@ router.delete('/:id(\\d+)/', async (req, res) => {
       }
     } else {
       //returns that the client was not found.
-      return res.status(200).send({ message: 'Client not found' });
+      return res.status(200).send({});
     }
   } catch (error) {
     console.log(error);
