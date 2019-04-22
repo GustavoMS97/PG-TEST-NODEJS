@@ -3,15 +3,15 @@
 ## Configuração inicial do projeto
 
 - Rodar no MySql os seguintes comandos
-  -     ```sql
-        CREATE DATABASE pg_test_nodejs;
-        ```
-  -     ```sql
-        CREATE USER 'dev'@'localhost' IDENTIFIED WITH mysql_native_password BY '1qaz2wsx3edc';
-        ```
-  -     ```sql
-        GRANT ALL PRIVILEGES ON *.* TO 'dev'@'localhost' WITH GRANT OPTION;
-        ```
+```sql
+    CREATE DATABASE pg_test_nodejs;
+```
+```sql
+    CREATE USER 'dev'@'localhost' IDENTIFIED WITH mysql_native_password BY '1qaz2wsx3edc';
+```
+```sql
+    GRANT ALL PRIVILEGES ON *.* TO 'dev'@'localhost' WITH GRANT OPTION;
+```
 - Na pasta do projeto, rodar os seguintes comandos
     -   ```bash
         npm install
