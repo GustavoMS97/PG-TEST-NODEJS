@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "ff770abd-7a3a-44bf-8cee-7c1d72dca2a4",
+		"name": "PG-TEST-NODEJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Send user file.",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": ""
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v.01/files",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v.01",
+						"files"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuperar dados do usuário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v.01/users/xpto123",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v.01",
+						"users",
+						"xpto123"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualização de cliente",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Luiz Eduardo Oku\",\n\t\"cep\": \"80240031\",\n\t\"cpf\": \"08601235964\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/api/v.01/clients/16",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v.01",
+						"clients",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar cliente",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v.01/clients/16",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v.01",
+						"clients",
+						"16"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar usuário",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/api/v.01/users/xpto123",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v.01",
+						"users",
+						"xpto123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
